@@ -23,6 +23,14 @@ jobs:
         run: flutter pub get
         working-directory: ${{ inputs.working-directory }}
 
+      - name: Check code format
+        run: dart format --set-exit-if-changed .
+        working-directory: ${{ inputs.working-directory }}
+
+      - name: Analyze
+        run: flutter analyze
+        working-directory: ${{ inputs.working-directory }}
+
       - name: Flutter test
         run: flutter test --coverage
         working-directory: ${{ inputs.working-directory }}
