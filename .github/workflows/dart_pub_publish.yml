@@ -32,7 +32,7 @@ jobs:
         working-directory: ${{ inputs.working-directory }}
 
       - name: Dart test
-        run: dart test --coverage
+        run: dart test --coverage=coverage
         working-directory: ${{ inputs.working-directory }}
 
       # - name: Upload coverage to codecov
